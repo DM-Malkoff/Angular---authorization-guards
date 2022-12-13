@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "demoncfh@mail.ru",
+      "password": "10101010"
+    },
+    {
+      "email": "awdwd@wdawd",
+      "password": "123123",
+      "id": 2
+    },
+    {
+      "email": "demoncfh@mail.ru",
+      "password": "123123",
+      "id": 3
+    },
+    {
+      "email": "test@test.ru",
+      "password": "202020",
+      "id": 4
+    },
+    {
+      "email": "zxz@zzz",
+      "password": "123123",
+      "id": 5
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "email": "zzz@zzz",
+      "password": "123123",
+      "id": 7
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 8
+    }
+  ]
+}

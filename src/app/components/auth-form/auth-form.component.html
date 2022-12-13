@@ -1,0 +1,32 @@
+<div class="authorize-block">
+  <h1>{{caption}}</h1>
+  <form (ngSubmit)="onSubmit($event)">
+    <div class="welcome-message" [ngClass]="{error: !access}" *ngIf="page == 'authorization' && !errorMessage">
+      <ng-container *ngIf="access; else accessDenied">Enter you verification data</ng-container>
+      <ng-template #accessDenied>Before using this service you must Login</ng-template>
+    </div>
+    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hidePassword ? 'password' : 'text'" [formControl]="password" required>
+      <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">{{getErrorMessage('password')}}</mat-error>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      class="button-submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="email.invalid || password.invalid || !formIsActive">{{formButtonText}}</button>
+  </form>
+</div>
+
